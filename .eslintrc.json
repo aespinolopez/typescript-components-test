@@ -1,0 +1,58 @@
+{
+  "extends": [
+    "airbnb",
+    "plugin:import/errors",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended",
+    "prettier"
+  ],
+  "ignorePatterns": ["webpack.*", "/build/"],
+  "parser": "@typescript-eslint/parser",
+  "rules": {
+    "react/jsx-props-no-spreading": 0,
+    "no-use-before-define": [
+      "error",
+      {
+        "functions": false
+      }
+    ],
+    "no-underscore-dangle": 0,
+    "import/prefer-default-export": 0,
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "**/*.test.{js,mjs,jsx}",
+          "**/*.stories.jsx",
+          "**/mocks/** ",
+          "**/__mocks__/** "
+        ]
+      }
+    ],
+    "react/jsx-filename-extension": [
+      2,
+      { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+    ],
+    "react/react-in-jsx-scope": "off"
+  },
+  "plugins": ["react", "import", "jsx-a11y", "jest", "@typescript-eslint"],
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true,
+    "jest/globals": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": "webpack"
+  }
+}

@@ -1,0 +1,12 @@
+node_modules
+.cache/
+dist/
+lib/
+.env
+.DS_Store
+coverage/
+.idea/
+.vscode
+npm-debug.log
+/storybook-static
+*.tgz
