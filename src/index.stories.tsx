@@ -2,6 +2,8 @@ export default {
   title: "foo/bar",
 };
 
-export const Default = () => (
+interface CustomProps {}
+
+export const Default = (props: CustomProps) => (
   <div css={{ color: "blue", backgroundColor: "red" }}>Hello World!!</div>
 );
