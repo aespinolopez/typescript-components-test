@@ -2,6 +2,8 @@
   "extends": [
     "airbnb",
     "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript",
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended",
     "prettier"
@@ -9,13 +11,21 @@
   "ignorePatterns": ["webpack.*", "/build/"],
   "parser": "@typescript-eslint/parser",
   "rules": {
-    "react/jsx-props-no-spreading": 0,
-    "no-use-before-define": [
+    "no-unused-vars": 0,
+    "import/no-unresolved": 0,
+    "import/extensions": [
       "error",
+      "ignorePackages",
       {
-        "functions": false
+        "js": "never",
+        "ts": "never",
+        "tsx": "never"
       }
     ],
+    "@typescript-eslint/no-unused-vars": "error",
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": ["error"],
+    "react/jsx-props-no-spreading": 0,
     "no-underscore-dangle": 0,
     "import/prefer-default-export": 0,
     "import/no-extraneous-dependencies": [
@@ -53,6 +63,10 @@
     "react": {
       "version": "detect"
     },
-    "import/resolver": "webpack"
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
   }
 }
