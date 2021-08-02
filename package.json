@@ -41,6 +41,8 @@
   },
   "scripts": {
     "test": "jest",
+    "lint": "eslint \"src/**/*.{js,jsx,mjs,ts,tsx}\" --quiet",
+    "format": "prettier --write \"**/*.{js,jsx,mjs,ts,tsx}\"",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
