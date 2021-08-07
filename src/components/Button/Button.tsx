@@ -1,7 +1,6 @@
 import * as React from "react";
 import styled from "@emotion/styled";
 import * as CSS from "csstype";
-import { Interpolation, Theme } from "@emotion/react";
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: string,
@@ -30,16 +29,16 @@ const variantStyles: ButtonVariations = {
 
 export const CssPropButton = ({ children, variation, ...props }: ButtonProps) => {
   const type = variantStyles[variation];
-  return <button css={[commonStyles, type] as Interpolation<Theme>} type="button" {...props}>{children}</button>
+  return <button css={[commonStyles, type] as any} type="button" {...props}>{children}</button>
 }
 
 
-interface StyledButtonProps {
+export interface StyledButtonProps {
   children: string,
   variation: "primary" | "secondary",
 }
 
 export const StyledButton = styled.button<StyledButtonProps>(
-  (commonStyles as Interpolation<Theme>),
-  ({variation}) => variantStyles[variation] as Interpolation<Theme>
+  (commonStyles as any),
+  ({variation}) => variantStyles[variation] as any
 )

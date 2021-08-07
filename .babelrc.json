@@ -15,7 +15,7 @@
     ],
     [
       "@babel/preset-typescript",
-      { "isTSX": true, "jsxPragma": "@emotion/react" }
+      { "isTSX": true, "jsxPragma": "@emotion/react", "allExtensions": true }
     ]
   ],
   "plugins": ["@emotion"],

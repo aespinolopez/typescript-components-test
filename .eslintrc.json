@@ -8,7 +8,7 @@
     "plugin:jsx-a11y/recommended",
     "prettier"
   ],
-  "ignorePatterns": ["webpack.*", "/build/"],
+  "ignorePatterns": ["webpack.*", "/build/", "/lib/"],
   "parser": "@typescript-eslint/parser",
   "rules": {
     "no-unused-vars": 0,
@@ -32,8 +32,9 @@
       "error",
       {
         "devDependencies": [
-          "**/*.test.{js,mjs,jsx}",
-          "**/*.stories.jsx",
+          "**/*.test.{js,mjs,jsx,ts,tsx}",
+          "**/*.stories.{js,mjs,jsx,ts,tsx}",
+          "**/__tests__/**",
           "**/mocks/** ",
           "**/__mocks__/** "
         ]
